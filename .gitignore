@@ -1,0 +1,87 @@
+# DevOpsCanvas Dashboard - Git Ignore Rules
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production builds
+/.next/
+/out/
+build/
+dist/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel deployment
+.vercel
+
+# TypeScript cache
+*.tsbuildinfo
+next-env.d.ts
+
+# Testing
+/coverage/
+/.nyc_output
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+Dockerfile.dev
+
+# Local development
+*.local
+.cache/
+
+# Backup files
+*.backup
+*.bak
+*.orig
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary folders
+tmp/
+temp/

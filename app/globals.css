@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* OpsCanvas Design System - Dark UI */
+body {
+  @apply bg-background text-text font-sans;
+}
+
+/* Base layer for consistent styling */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Improved transitions and hover effects */
+  .dashboard-card {
+    @apply bg-surface text-text p-4 rounded-xl hover:bg-card transition-all duration-200 ease-in-out;
+  }
+
+  .dashboard-card:hover {
+    @apply shadow-md;
+  }
+
+  /* Icon hover effects */
+  .icon-hover {
+    @apply hover:opacity-80 transition-opacity duration-200;
+  }
+
+  /* Component specific styles */
+  .pipeline-step {
+    @apply bg-border px-4 py-1 rounded;
+  }
+
+  .recent-run-row {
+    @apply flex justify-between items-center px-4 py-2 rounded-lg hover:bg-card transition-all duration-200;
+  }
+
+  .alert-card {
+    @apply flex items-center gap-2 bg-card p-3 rounded-lg;
+  }
+
+  .service-card {
+    @apply bg-surface text-center p-4 hover:bg-card transition-all duration-200 ease-in-out rounded-xl;
+  }
+
+  /* Status colors */
+  .status-success {
+    @apply text-success;
+  }
+
+  .status-error {
+    @apply text-error;
+  }
+
+  .status-warning {
+    @apply text-yellow-500;
+  }
+}
+
+/* Set CSS variables for compatibility */
+:root {
+  --radius: 0.75rem;
+}
