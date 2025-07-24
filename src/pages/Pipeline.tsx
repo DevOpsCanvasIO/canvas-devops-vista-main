@@ -6,15 +6,6 @@ const Pipeline = () => {
   return (
     <DashboardLayout>
       <div className="space-y-6 p-6">
-        <div>
-          <h1 className="text-2xl font-bold text-foreground mb-2">
-            Pipeline Management
-          </h1>
-          <p className="text-muted-foreground">
-            Monitor and manage your CI/CD pipelines
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="bg-metric-bg border-border">
             <CardHeader className="pb-2">
@@ -68,13 +59,66 @@ const Pipeline = () => {
         <Card className="bg-metric-bg border-border">
           <CardHeader>
             <CardTitle className="text-lg font-semibold text-foreground">
-              Pipeline Activity
+              Recent Pipeline Activity
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">
-              Pipeline management interface coming soon...
-            </p>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <div>
+                    <div className="font-medium">Payments API</div>
+                    <div className="text-sm text-muted-foreground">Build → Test → Deploy</div>
+                  </div>
+                </div>
+                <div className="text-sm text-green-600">✓ Success (2m 15s)</div>
+              </div>
+              
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+                  <div>
+                    <div className="font-medium">User Auth Service</div>
+                    <div className="text-sm text-muted-foreground">Build → Test</div>
+                  </div>
+                </div>
+                <div className="text-sm text-yellow-600">⚡ Running (1m 42s)</div>
+              </div>
+              
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                  <div>
+                    <div className="font-medium">Notification Service</div>
+                    <div className="text-sm text-muted-foreground">Build → Test</div>
+                  </div>
+                </div>
+                <div className="text-sm text-red-600">✗ Failed (45s)</div>
+              </div>
+              
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                  <div>
+                    <div className="font-medium">Analytics API</div>
+                    <div className="text-sm text-muted-foreground">Queued</div>
+                  </div>
+                </div>
+                <div className="text-sm text-gray-500">⏳ Pending</div>
+              </div>
+              
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <div>
+                    <div className="font-medium">Gateway Service</div>
+                    <div className="text-sm text-muted-foreground">Build</div>
+                  </div>
+                </div>
+                <div className="text-sm text-blue-600">🔄 Starting</div>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>

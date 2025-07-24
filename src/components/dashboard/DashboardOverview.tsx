@@ -2,9 +2,14 @@
 
 import { MetricCard } from './MetricCard'
 import { useMetrics } from '@/hooks/useMetrics'
+import { MetricServiceImpl } from '@/services/metric.service'
+import { MockMetricRepository } from '@/services/mockData.service'
+
+// Create service instance
+const metricService = new MetricServiceImpl(new MockMetricRepository())
 
 export function DashboardOverview() {
-  const { data: metrics, isLoading } = useMetrics()
+  const { data: metrics, isLoading } = useMetrics(metricService)
 
   if (isLoading) {
     return (
@@ -26,27 +31,19 @@ export function DashboardOverview() {
     <div className="space-y-4">
       <h2 className="text-lg font-semibold text-text">Dashboard Overview</h2>
       <div className="grid grid-cols-3 gap-4">
-        <MetricCard
-          title="CPU Usage"
-          value={metrics?.cpuUsage || 0}
-          unit="%"
-          trend={5}
-          className="hover:bg-card transition-all"
-        />
-        <MetricCard
-          title="Memory"
-          value={metrics?.memoryUsage || 0}
-          unit="%"
-          trend={-2}
-          className="hover:bg-card transition-all"
-        />
-        <MetricCard
-          title="Storage"
-          value={metrics?.storageUsage || 0}
-          unit="%"
-          trend={1}
-          className="hover:bg-card transition-all"
-        />
+        {metrics?.slice(0, 3).map((metric, index) => (
+          <MetricCard
+            key={metric.id}
+            title={metric.title}
+            value={metric.value}
+            unit={metric.unit}
+            trend={metric.trend}
+            subtitle={metric.subtitle}
+            className="hover:bg-card transition-all"
+          />
+        )) || (
+          <div className="col-span-3 text-center text-muted-foreground">No metrics available</div>
+        )}
       </div>
     </div>
   )

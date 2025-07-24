@@ -1,6 +1,6 @@
 "use client"
 
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import { DevOpsSidebar } from "./DevOpsSidebar"
 
 interface DashboardLayoutProps {
@@ -20,10 +20,6 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           
           {/* Content with proper z-index */}
           <div className="relative z-10 flex-1 flex flex-col">
-            {/* Toggle button */}
-            <div className="p-4 pb-0">
-              <SidebarTrigger />
-            </div>
             <div className="flex-1 p-6">
               {children}
             </div>

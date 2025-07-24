@@ -11,7 +11,7 @@ export const DASHBOARD_CONFIG = {
 } as const;
 
 export const NAVIGATION_ITEMS = [
-  { title: "Dashboard", url: "/", icon: "LayoutDashboard" as const },
+  { title: "Dashboard", url: "/dashboard", icon: "LayoutDashboard" as const },
   { title: "Pipeline", url: "/pipeline", icon: "GitBranch" as const },
   { title: "Observability", url: "/observability", icon: "Activity" as const },
   { title: "Catalog", url: "/catalog", icon: "Package" as const },

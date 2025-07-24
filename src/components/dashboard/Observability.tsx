@@ -12,6 +12,11 @@ import {
   Legend
 } from 'chart.js'
 import { useMetrics } from '@/hooks/useMetrics'
+import { MetricServiceImpl } from '@/services/metric.service'
+import { MockMetricRepository } from '@/services/mockData.service'
+
+// Create service instance
+const metricService = new MetricServiceImpl(new MockMetricRepository())
 
 ChartJS.register(
   CategoryScale,
@@ -24,7 +29,7 @@ ChartJS.register(
 )
 
 export function Observability() {
-  const { data: metrics, isLoading } = useMetrics()
+  const { data: metrics, isLoading } = useMetrics(metricService)
 
   const chartData = {
     labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],

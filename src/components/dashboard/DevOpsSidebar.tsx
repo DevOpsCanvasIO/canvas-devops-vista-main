@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import * as Icons from "lucide-react"
 import { useAuth } from "@/contexts/AuthContext"
+import Image from "next/image"
 
 import {
   Sidebar,
@@ -14,9 +15,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { NAVIGATION_ITEMS, DASHBOARD_CONFIG } from "@/constants/dashboard"
+import { NAVIGATION_ITEMS } from "@/constants/dashboard"
 
 export function DevOpsSidebar() {
   const { state } = useSidebar()
@@ -37,24 +39,17 @@ export function DevOpsSidebar() {
     >
       <SidebarContent>
         {/* Logo */}
-        <div className="flex items-center gap-3 p-6 border-b border-sidebar-border">
-          <div className="w-10 h-10 flex items-center justify-center">
-            <img 
-              src="/DevOpsCanvasLogo.png" 
+        <div className="flex items-center justify-center p-6 border-b border-sidebar-border">
+          <div className="flex flex-col items-center">
+            <Image 
               alt="DevOps Canvas Logo" 
-              className="w-8 h-8"
+              width={40} 
+              height={40} 
+              className="w-10 h-auto mb-1" 
+              src="/DevOpsCanvasLogo.png" 
             />
+            <span className="text-lg font-bold text-foreground">DevOpsCanvas</span>
           </div>
-          {!collapsed && (
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-sidebar-foreground">
-                DevOpsCanvas-dashboard
-              </span>
-              <span className="text-xs text-sidebar-foreground/60">
-                {DASHBOARD_CONFIG.VERSION}
-              </span>
-            </div>
-          )}
         </div>
 
         <SidebarGroup className="mt-4">
@@ -115,6 +110,11 @@ export function DevOpsSidebar() {
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
+          
+          {/* Sidebar Toggle Button */}
+          <div className="flex justify-center mt-4 pt-3 border-t border-sidebar-border">
+            <SidebarTrigger className="h-8 w-8 text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent/50 transition-all" />
+          </div>
         </div>
       </SidebarContent>
     </Sidebar>

@@ -6,15 +6,6 @@ const Observability = () => {
   return (
     <DashboardLayout>
       <div className="space-y-6 p-6">
-        <div>
-          <h1 className="text-2xl font-bold text-foreground mb-2">
-            Observability
-          </h1>
-          <p className="text-muted-foreground">
-            Monitor system health and performance metrics
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="bg-metric-bg border-border">
             <CardHeader className="pb-2">
@@ -68,13 +59,66 @@ const Observability = () => {
         <Card className="bg-metric-bg border-border">
           <CardHeader>
             <CardTitle className="text-lg font-semibold text-foreground">
-              System Metrics
+              System Health Monitoring
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">
-              Advanced monitoring dashboard coming soon...
-            </p>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <div>
+                    <div className="font-medium">API Gateway</div>
+                    <div className="text-sm text-muted-foreground">Response time: 125ms</div>
+                  </div>
+                </div>
+                <div className="text-sm text-green-600">Healthy</div>
+              </div>
+              
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div>
+                    <div className="font-medium">Database Cluster</div>
+                    <div className="text-sm text-muted-foreground">CPU: 78% | Memory: 65%</div>
+                  </div>
+                </div>
+                <div className="text-sm text-yellow-600">Warning</div>
+              </div>
+              
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <div>
+                    <div className="font-medium">Message Queue</div>
+                    <div className="text-sm text-muted-foreground">Queue depth: 12 messages</div>
+                  </div>
+                </div>
+                <div className="text-sm text-green-600">Healthy</div>
+              </div>
+              
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div>
+                    <div className="font-medium">Cache Layer</div>
+                    <div className="text-sm text-muted-foreground">Hit ratio: 45% (Low)</div>
+                  </div>
+                </div>
+                <div className="text-sm text-red-600">Critical</div>
+              </div>
+              
+              <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <div>
+                    <div className="font-medium">CDN Network</div>
+                    <div className="text-sm text-muted-foreground">Global latency: 89ms avg</div>
+                  </div>
+                </div>
+                <div className="text-sm text-blue-600">Optimal</div>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>

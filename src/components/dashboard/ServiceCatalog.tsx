@@ -69,11 +69,7 @@ export function ServiceCatalog() {
               key={index} 
               className="flex flex-col items-center p-4 rounded-xl bg-accent/5 hover:bg-accent/10 transition-all duration-200 ease-in-out cursor-pointer border border-transparent hover:border-accent/20"
             >
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3 ${
-                service.status === "active" ? "bg-success/10 text-success" :
-                service.status === "warning" ? "bg-warning/10 text-warning" :
-                "bg-muted/20 text-muted-foreground"
-              }`}>
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3 ${service.color}`}>
                 <service.icon className="w-6 h-6" />
               </div>
               <span className="text-sm font-medium text-foreground text-center">
