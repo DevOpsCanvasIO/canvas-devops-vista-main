@@ -25,7 +25,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="text-center mt-8">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            © 2024 DevOps Canvas. All rights reserved.
+            © 2025 DevOps Canvas. All rights reserved.
           </p>
         </div>
       </div>

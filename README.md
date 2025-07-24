@@ -129,14 +129,14 @@ Before you begin, ensure you have the following installed:
    ```
 
 5. **Open in Browser**
-   - Navigate to `http://localhost:3000`
+   - Navigate to `http://localhost:3001` (auto-detects port)
    - The dashboard should load with the DevOpsCanvas interface
 
 ### Quick Start with Authentication
 
 1. **Access Login Page**
    ```
-   http://localhost:3000/login
+   http://localhost:3001/login
    ```
 
 2. **Use Demo Credentials**
@@ -295,6 +295,15 @@ src/
 
 ## 🔧 Recent Improvements
 
+### ✅ Latest Updates (2025)
+- **Pipeline Section Enhancement**: Added proper "Pipeline" title matching Observability component specifications
+- **Dashboard Route Fix**: Fixed navigation issues between `/` and `/dashboard` routes - both now show identical content
+- **Service Catalog**: Completely implemented with 9 comprehensive services including health status, dependencies, and team ownership
+- **Incident Management**: Full implementation with severity levels, status workflows, and resolution tracking
+- **Next.js Configuration**: Updated deprecated `images.domains` to modern `images.remotePatterns` configuration
+- **Copyright Updates**: Updated all copyright notices to 2025
+- **Unified Dashboard**: Both root (/) and /dashboard routes now use the same sophisticated dashboard components
+
 ### ✅ Hydration Issues Fixed
 - **useIsMobile Hook**: Fixed server/client state mismatch
 - **Sidebar Cookie Access**: Added proper client-side checks
@@ -305,12 +314,14 @@ src/
 - **Faster Build Times**: Optimized component loading
 - **Reduced Bundle Size**: Eliminated unused dependencies
 - **Better Caching**: Improved Next.js caching strategies
+- **Modern Configuration**: Updated to Next.js 15 best practices
 
 ### ✅ UI/UX Improvements
 - **Enhanced Sidebar**: User profile and logout functionality
 - **Better Mobile Experience**: Improved responsive behavior
 - **Loading States**: Better user feedback during operations
 - **Error Handling**: More informative error messages
+- **Component Consistency**: Standardized title formatting across dashboard components
 
 ## 🎨 Customization
 
@@ -364,7 +375,7 @@ This project is property of **DevOpsCanvas**. For internal development:
 
 ## 📄 License
 
-© 2024 DevOpsCanvas. All rights reserved.
+© 2025 DevOps Canvas. All rights reserved.
 
 ## 🆘 Support
 

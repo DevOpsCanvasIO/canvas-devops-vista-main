@@ -10,6 +10,7 @@ const stages = [
 export function PipelineOrchestration() {
   return (
     <div className="space-y-4">
+      <h2 className="text-lg font-semibold text-text">Pipeline</h2>
       {/* Pipeline Steps as Horizontal Flow */}
       <div className="flex items-center justify-between">
         {stages.map((stage, index) => (
