@@ -17,12 +17,19 @@ DevOpsCanvas-dashboard is a modern, professional DevOps dashboard built with Nex
 - **📱 Responsive Login**: Mobile-optimized authentication flow
 
 ### 🎛️ Dashboard Features
-- **📊 Real-time Dashboard**: Live metrics and status indicators
-- **🔄 Pipeline Management**: CI/CD pipeline monitoring and control
-- **📈 Observability**: System health and performance metrics with charts
-- **📦 Service Catalog**: Service discovery and management
-- **🚨 Incident Management**: Track and manage system incidents
+- **📊 Real-time Dashboard**: Live metrics and status indicators with comprehensive KPIs
+- **🔄 Pipeline Management**: Complete CI/CD pipeline monitoring with activity, metrics, and scheduling
+- **📈 Observability**: System health monitoring with alerts, metrics, and performance tracking
+- **📦 Service Catalog**: Comprehensive service discovery with 9 services, health status, and dependencies
+- **🚨 Incident Management**: Full incident tracking with severity levels, status workflows, and resolution
 - **👥 User Profile**: User info display in sidebar with logout option
+
+### 💼 Business Intelligence
+- **📈 DORA Metrics**: Deployment frequency, lead time, change failure rate, and recovery time
+- **🎯 Pipeline Activity**: Real-time pipeline status with success rates and performance metrics
+- **🏥 System Health**: Infrastructure monitoring with CPU, memory, disk usage, and network stats
+- **📊 Service Analytics**: Uptime tracking, dependency mapping, and performance monitoring
+- **⚠️ Alert Management**: Critical, warning, and info alerts with proper categorization
 
 ### 🎨 UI/UX Features
 - **🌙 Dark/Light Theme**: Seamless theme switching with next-themes
