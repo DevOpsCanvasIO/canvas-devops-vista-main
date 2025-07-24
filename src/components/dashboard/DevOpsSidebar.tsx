@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import * as Icons from "lucide-react"
+import { useAuth } from "@/contexts/AuthContext"
 
 import {
   Sidebar,
@@ -21,6 +22,13 @@ export function DevOpsSidebar() {
   const { state } = useSidebar()
   const collapsed = state === "collapsed"
   const pathname = usePathname()
+  const router = useRouter()
+  const { user, logout } = useAuth()
+
+  const handleLogout = () => {
+    logout()
+    router.push('/login')
+  }
 
   return (
     <Sidebar
@@ -76,6 +84,38 @@ export function DevOpsSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        
+        {/* User Info and Logout */}
+        <div className="mt-auto border-t border-sidebar-border p-4">
+          {user && (
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-8 bg-sidebar-accent rounded-full flex items-center justify-center">
+                <Icons.User className="w-4 h-4 text-sidebar-accent-foreground" />
+              </div>
+              {!collapsed && (
+                <div className="flex flex-col overflow-hidden">
+                  <span className="text-sm font-medium text-sidebar-foreground truncate">
+                    {user.name}
+                  </span>
+                  <span className="text-xs text-sidebar-foreground/60 truncate">
+                    {user.email}
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                onClick={handleLogout}
+                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sidebar-foreground hover:bg-destructive/10 hover:text-destructive transition-colors cursor-pointer"
+              >
+                <Icons.LogOut className="w-5 h-5" />
+                {!collapsed && <span>Sign Out</span>}
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </div>
       </SidebarContent>
     </Sidebar>
   )

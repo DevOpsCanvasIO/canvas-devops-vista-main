@@ -8,15 +8,29 @@ DevOpsCanvas-dashboard is a modern, professional DevOps dashboard built with Nex
 
 ## ✨ Features
 
-- **🎛️ Real-time Dashboard**: Live metrics and status indicators
+### 🔐 Authentication System
+- **🚪 Professional Login Page**: Clean, branded login interface at `/login`
+- **🔑 Form Validation**: Email/password validation with Zod schema
+- **👤 User Session Management**: Persistent authentication with localStorage
+- **🚪 Logout Functionality**: Secure sign-out with session cleanup
+- **🛡️ Route Protection**: Optional protected route components
+- **📱 Responsive Login**: Mobile-optimized authentication flow
+
+### 🎛️ Dashboard Features
+- **📊 Real-time Dashboard**: Live metrics and status indicators
 - **🔄 Pipeline Management**: CI/CD pipeline monitoring and control
-- **📊 Observability**: System health and performance metrics with charts
+- **📈 Observability**: System health and performance metrics with charts
 - **📦 Service Catalog**: Service discovery and management
 - **🚨 Incident Management**: Track and manage system incidents
-- **🎨 Modern UI**: Dark theme with glassmorphism effects
-- **📱 Responsive Design**: Works on desktop, tablet, and mobile
-- **🔧 Sidebar Toggle**: Collapsible navigation with keyboard shortcuts
+- **👥 User Profile**: User info display in sidebar with logout option
+
+### 🎨 UI/UX Features
+- **🌙 Dark/Light Theme**: Seamless theme switching with next-themes
+- **📱 Responsive Design**: Works perfectly on desktop, tablet, and mobile
+- **🔧 Collapsible Sidebar**: Toggle navigation with keyboard shortcuts (Ctrl+B)
 - **⚡ Fast Performance**: Built with Next.js 15 and React 19
+- **🎭 Modern UI**: Glassmorphism effects and smooth animations
+- **♿ Accessibility**: WCAG compliant with proper ARIA labels
 
 ## 🛠️ Technology Stack
 
@@ -110,6 +124,23 @@ Before you begin, ensure you have the following installed:
 5. **Open in Browser**
    - Navigate to `http://localhost:3000`
    - The dashboard should load with the DevOpsCanvas interface
+
+### Quick Start with Authentication
+
+1. **Access Login Page**
+   ```
+   http://localhost:3000/login
+   ```
+
+2. **Use Demo Credentials**
+   - **Email**: `admin@demo.com`
+   - **Password**: `admin123`
+
+3. **Test Features**
+   - Login with validation
+   - View user profile in sidebar
+   - Test logout functionality
+   - Experience responsive design
 
 ### Available Scripts
 
@@ -219,6 +250,61 @@ NEXT_PUBLIC_APP_ENV=production
 NEXT_PUBLIC_GA_ID=your_google_analytics_id
 ```
 
+## 🔐 Authentication System
+
+### Demo Credentials
+- **Email**: `admin@demo.com`
+- **Password**: `admin123`
+
+### Features
+- **Professional Login Page**: Accessible at `/login` with branded design
+- **Form Validation**: Real-time validation with Zod schema
+- **Session Management**: Persistent sessions using localStorage
+- **User Profile Display**: User info in sidebar with avatar
+- **Secure Logout**: Complete session cleanup on sign out
+- **Route Protection**: Optional protected route wrapper component
+
+### Authentication Flow
+1. **Login**: Navigate to `/login` and enter credentials
+2. **Validation**: Form validates email format and password requirements
+3. **Authentication**: Simulated API call with loading states
+4. **Session**: User data stored in localStorage for persistence
+5. **Dashboard Access**: Automatic redirect to dashboard on success
+6. **Logout**: Click "Sign Out" in sidebar to clear session
+
+### File Structure
+```
+app/login/
+└── page.tsx                     # Login page route
+src/
+├── components/
+│   ├── login/
+│   │   └── LoginForm.tsx        # Login form component
+│   └── auth/
+│       └── ProtectedRoute.tsx   # Route protection wrapper
+└── contexts/
+    └── AuthContext.tsx          # Authentication context
+```
+
+## 🔧 Recent Improvements
+
+### ✅ Hydration Issues Fixed
+- **useIsMobile Hook**: Fixed server/client state mismatch
+- **Sidebar Cookie Access**: Added proper client-side checks
+- **Theme Provider**: Implemented mounting state management
+- **Consistent SSR**: Removed unnecessary `suppressHydrationWarning`
+
+### ✅ Performance Enhancements
+- **Faster Build Times**: Optimized component loading
+- **Reduced Bundle Size**: Eliminated unused dependencies
+- **Better Caching**: Improved Next.js caching strategies
+
+### ✅ UI/UX Improvements
+- **Enhanced Sidebar**: User profile and logout functionality
+- **Better Mobile Experience**: Improved responsive behavior
+- **Loading States**: Better user feedback during operations
+- **Error Handling**: More informative error messages
+
 ## 🎨 Customization
 
 ### Theming
@@ -234,11 +320,31 @@ The dashboard uses CSS custom properties for theming. Update `app/globals.css` t
 }
 ```
 
+### Authentication Customization
+
+To modify authentication behavior, edit `src/contexts/AuthContext.tsx`:
+
+```typescript
+// Change demo credentials
+if (email === 'your-email@domain.com' && password === 'your-password') {
+  // Login successful
+}
+
+// Modify user data structure
+const userData = {
+  email: email,
+  name: 'Your User Name',
+  role: 'admin', // Add custom fields
+  avatar: '/path/to/avatar.png'
+}
+```
+
 ### Adding New Pages
 
 1. Create a new directory in `app/`
 2. Add a `page.tsx` file
 3. Update navigation in `src/constants/dashboard.ts`
+4. Optionally wrap with `ProtectedRoute` for authentication
 
 ## 🤝 Contributing
 
